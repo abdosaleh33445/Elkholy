@@ -1,1 +1,330 @@
 
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الخولي | ELKHOLY</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Cinzel:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --gold-light: #ad8a3e;
+            --gold-main: #8a6a2a;
+            --gold-deep: #5e4719;
+            --gold-border: rgba(245, 222, 160, 0.4);
+            --white-pure: #FFFFFF;
+            --text-gold-light: #FFF9E6;
+            --text-muted: #e0d0b0;
+            --card-glass: rgba(43, 31, 10, 0.55);
+            --card-border: rgba(245, 222, 160, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--gold-deep);
+            background-image: 
+                radial-gradient(circle at 50% 25%, rgba(173, 138, 62, 0.65) 0%, transparent 60%),
+                radial-gradient(circle at 10% 80%, rgba(94, 71, 25, 0.8) 0%, transparent 50%),
+                radial-gradient(circle at 90% 85%, rgba(94, 71, 25, 0.8) 0%, transparent 50%),
+                linear-gradient(135deg, #7c5e23 0%, #8a6a2a 50%, #4b3711 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-gold-light);
+            padding: 40px 16px;
+            position: relative;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 430px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            z-index: 1;
+        }
+
+        /* حركة تأرجح واهتزاز النجفة */
+        .logo-wrapper {
+            position: relative;
+            width: 165px;
+            height: 165px;
+            margin-bottom: 18px;
+            transform-origin: 50% 0%;
+            animation: chandelierSwing 3.2s ease-in-out infinite alternate;
+            filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.5));
+        }
+
+        @keyframes chandelierSwing {
+            0% { transform: rotate(-7deg); }
+            50% { transform: rotate(0deg); }
+            100% { transform: rotate(7deg); }
+        }
+
+        .logo-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            border: 3.5px solid rgba(255, 232, 163, 0.85);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            background-color: #fffcf5;
+        }
+
+        .store-title {
+            font-size: 1.65rem;
+            font-weight: 800;
+            color: #FFFFFF;
+            margin-bottom: 4px;
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .store-title .ar-name {
+            font-family: 'Cairo', sans-serif;
+            color: #FFFFFF;
+        }
+
+        .store-title .divider {
+            color: #FFE699;
+            font-weight: 400;
+        }
+
+        .store-title .en-name {
+            font-family: 'Cinzel', serif;
+            color: #FFE699;
+            letter-spacing: 1.5px;
+        }
+
+        .store-bio {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .links-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 13px;
+        }
+
+        .link-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 13px 18px;
+            background: var(--card-glass);
+            border: 1.5px solid var(--card-border);
+            border-radius: 18px;
+            text-decoration: none;
+            color: var(--text-gold-light);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25), inset 0 1px 2px rgba(255, 255, 255, 0.15);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .link-card:hover {
+            transform: translateY(-3px);
+            background: linear-gradient(135deg, rgba(82, 59, 18, 0.85) 0%, rgba(138, 106, 42, 0.85) 100%);
+            border-color: #FFE699;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+        }
+
+        .link-content {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .icon-box {
+            width: 44px;
+            height: 44px;
+            border-radius: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(173, 138, 62, 0.35) 100%);
+            color: #FFE699;
+            border: 1.5px solid var(--gold-border);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .link-card:hover .icon-box {
+            background: linear-gradient(135deg, #FFE8A3 0%, var(--gold-main) 100%);
+            color: #2b1f0a;
+            transform: scale(1.05);
+        }
+
+        .link-text {
+            text-align: right;
+        }
+
+        .link-title {
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: #FFFFFF;
+        }
+
+        .link-subtitle {
+            font-size: 0.77rem;
+            color: var(--text-muted);
+            margin-top: 1px;
+            font-weight: 600;
+            direction: ltr;
+            text-align: right;
+        }
+
+        .arrow-icon {
+            font-size: 0.85rem;
+            color: #FFE699;
+            opacity: 0.65;
+            transition: all 0.3s ease;
+        }
+
+        .link-card:hover .arrow-icon {
+            opacity: 1;
+            transform: translateX(-4px);
+            color: #FFFFFF;
+        }
+
+        .link-card.call-card {
+            background: linear-gradient(135deg, rgba(64, 46, 14, 0.85) 0%, rgba(120, 92, 35, 0.75) 100%);
+            border: 1.5px solid rgba(255, 230, 153, 0.5);
+        }
+
+        .footer {
+            margin-top: 32px;
+            font-size: 0.78rem;
+            color: rgba(255, 245, 220, 0.7);
+            font-weight: 700;
+            letter-spacing: 0.8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="logo-wrapper">
+            <img id="mainLogo" alt="ELKHOLY Logo" class="logo-img" src="Elkholy.png.jpeg">
+        </div>
+
+        <h1 class="store-title">
+            <span class="ar-name">الخولي</span>
+            <span class="divider">|</span>
+            <span class="en-name">ELKHOLY</span>
+        </h1>
+        <p class="store-bio">Lighting Solutions</p>
+
+        <div class="links-container">
+
+            <a href="tel:01006786986" class="link-card call-card">
+                <div class="link-content">
+                    <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
+                    <div class="link-text">
+                        <div class="link-title">اتصال هاتفي</div>
+                        <div class="link-subtitle">01006786986</div>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-left arrow-icon"></i>
+            </a>
+
+            <a href="https://wa.me/201006786986" target="_blank" class="link-card">
+                <div class="link-content">
+                    <div class="icon-box"><i class="fa-brands fa-whatsapp"></i></div>
+                    <div class="link-text">
+                        <div class="link-title">تواصل عبر واتساب</div>
+                        <div class="link-subtitle">+20 100 678 6986</div>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-left arrow-icon"></i>
+            </a>
+
+            <a href="https://facebook.com/share/1CxnJnQw8A" target="_blank" class="link-card">
+                <div class="link-content">
+                    <div class="icon-box"><i class="fa-brands fa-facebook-f"></i></div>
+                    <div class="link-text">
+                        <div class="link-title">فيسبوك الشخصي | Facebook</div>
+                        <div class="link-subtitle">تابع آخر أعمالنا وتحديثاتنا</div>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-left arrow-icon"></i>
+            </a>
+
+            <a href="https://instagram.com/alaa.elkholy.334" target="_blank" class="link-card">
+                <div class="link-content">
+                    <div class="icon-box"><i class="fa-brands fa-instagram"></i></div>
+                    <div class="link-text">
+                        <div class="link-title">انستجرام | Instagram</div>
+                        <div class="link-subtitle">@alaa.elkholy.334</div>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-left arrow-icon"></i>
+            </a>
+
+            <a href="https://tiktok.com/@alaaelkholy120" target="_blank" class="link-card">
+                <div class="link-content">
+                    <div class="icon-box"><i class="fa-brands fa-tiktok"></i></div>
+                    <div class="link-text">
+                        <div class="link-title">تيك توك | TikTok</div>
+                        <div class="link-subtitle">@alaaelkholy120</div>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-left arrow-icon"></i>
+            </a>
+
+            <a href="https://maps.google.com/?q=31.038631,30.471657" target="_blank" class="link-card">
+                <div class="link-content">
+                    <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
+                    <div class="link-text">
+                        <div class="link-title">موقعنا على الخريطة | Google Maps</div>
+                        <div class="link-subtitle">تفضل بزيارتنا في المعرض 📍</div>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-left arrow-icon"></i>
+            </a>
+
+        </div>
+
+        <div class="footer">
+            جميع الحقوق محفوظة © ELKHOLY Lighting Solutions
+        </div>
+    </div>
+
+    <script>
+        // إبقاء اللوجو محملاً وظاهراً دائماً من الذاكرة المخزنة تلقائياً
+        const imgElement = document.getElementById('mainLogo');
+        const savedLogo = localStorage.getItem('elkholy_custom_logo');
+        if (savedLogo) {
+            imgElement.src = savedLogo;
+        }
+    </script>
+</body>
+</html>
